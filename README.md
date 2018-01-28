@@ -9,7 +9,7 @@ JavaScript parser for reference net datatypes
 ## Example usage 
 
 ```JavaScript
-import parser from 'RnwParser';
+import parser from 'rnw-parser';
 
 parser.readRnw('__PathToRNW__').then(drawings => {
     console.log(drawings[0]);
