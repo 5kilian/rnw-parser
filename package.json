@@ -1,0 +1,10 @@
+{
+  "name": "rnw-parser",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}
