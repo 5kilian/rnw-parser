@@ -17,3 +17,6 @@ parser.readRnw('__PathToRNW__').then(drawings => {
 
 ```
 
+## Licence
+MIT
+
