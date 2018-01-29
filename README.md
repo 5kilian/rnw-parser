@@ -11,8 +11,8 @@ JavaScript parser for reference net datatypes
 ```JavaScript
 import parser from 'rnw-parser';
 
-parser.readRnw('__PathToRNW__').then(drawings => {
-    console.log(drawings[0]);
+parser.readRnw('__PathToRNW__').then(drawing => {
+    console.log(drawing);
 });
 
 ```
