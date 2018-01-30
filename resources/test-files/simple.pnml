@@ -1,0 +1,31 @@
+<pnml xmlns="RefNet">
+   <net id="netId1517268112190" type="RefNet">
+      <place id="8">
+         <graphics>
+            <position x="186" y="158"/>
+            <dimension x="50" y="39"/>
+            <fill color="rgb(255,255,255)"/>
+            <line color="rgb(0,0,255)"/>
+         </graphics>
+      </place>
+      <arc id="6" source="8" target="9">
+         <type>
+            <text>ordinary</text>
+         </type>
+         <graphics>
+            <line color="rgb(0,0,0)" style="solid"/>
+         </graphics>
+      </arc>
+      <transition id="9">
+         <graphics>
+            <position x="394" y="157"/>
+            <dimension x="24" y="16"/>
+            <fill color="rgb(112,219,147)"/>
+            <line color="rgb(0,0,0)"/>
+         </graphics>
+      </transition>
+      <name>
+         <text>simple</text>
+      </name>
+   </net>
+</pnml>

@@ -1,8 +1,8 @@
-11
-    de.renew.gui.CPNDrawing 3
-        de.renew.gui.PlaceFigure "attributes" "attributes" 1 "FigureWithID" "Int" 8 161 139 50 39 NULL  
-        de.renew.gui.ArcConnection "attributes" "attributes" 1 "FigureWithID" "Int" 6 2 211 158 382 157 NULL 
+11 
+    de.renew.gui.CPNDrawing 3 
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 8 "FrameColor" "Color" 0 0 255 255 "FillColor" "Color" 255 255 255 255 161 139 50 39 NULL  
+        de.renew.gui.ArcConnection "attributes" "attributes" 2 "LineStyle" "String" "20" "FigureWithID" "Int" 6 2 211 158 382 157 NULL 
             CH.ifa.draw.figures.ArrowTip 0.4 8.0 8.0 1  "CH.ifa.draw.figures.ArrowTip" 
             CH.ifa.draw.figures.ChopEllipseConnector REF 1  
             CH.ifa.draw.standard.ChopBoxConnector 
-                de.renew.gui.TransitionFigure "attributes" "attributes" 1 "FigureWithID" "Int" 9 382 149 24 16 NULL    REF 6 NULL  0 17 1508 1421 
+                de.renew.gui.TransitionFigure "attributes" "attributes" 1 "FigureWithID" "Int" 9 382 149 24 16 NULL    REF 6 NULL  0 0 1280 1410 
