@@ -1,6 +1,10 @@
 # rnw-parser
 
-JavaScript parser for reference net datatypes
+JavaScript parser for reference net datatypes.
+
+Supported datatypes:
+  * .rnw
+  * .pnml
 
 ## Installation
 
@@ -12,6 +16,10 @@ JavaScript parser for reference net datatypes
 import parser from 'rnw-parser';
 
 parser.readRnw('__PathToRNW__').then(drawing => {
+    console.log(drawing);
+});
+
+parser.readPnml('__PathToPNML__').then(drawing => {
     console.log(drawing);
 });
 
