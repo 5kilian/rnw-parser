@@ -19,3 +19,12 @@ test('testPnml', async t => {
 
     t.is((await res).size, 7);
 });
+
+test('testDraw', async t => {
+    let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/test.draw')).then(r => {
+        // console.log(util.inspect(r, false, null));
+        return r;
+    });
+
+    t.is((await res).size, (await res).figures.length);
+});
