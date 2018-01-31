@@ -4,7 +4,7 @@ import RnwParser from './index';
 
 test('testRnw', async t => {
     let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/doubleTip.rnw')).then(r => {
-        console.log(util.inspect(r, false, null));
+        // console.log(util.inspect(r, false, null));
         return r;
     });
 
@@ -13,7 +13,7 @@ test('testRnw', async t => {
 
 test('testPnml', async t => {
     let res = Promise.resolve(RnwParser.readPnml('./resources/test-files/doubleTip.pnml')).then(r => {
-        console.log(util.inspect(r, false, null));
+        // console.log(util.inspect(r, false, null));
         return r;
     });
 
@@ -32,6 +32,15 @@ test('testDraw', async t => {
 test('testFa', async t => {
     let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/test.fa')).then(r => {
         // console.log(util.inspect(r, false, null));
+        return r;
+    });
+
+    t.is((await res).size, (await res).figures.length);
+});
+
+test('testAip', async t => {
+    let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/untitled.aip')).then(r => {
+ //       console.log(util.inspect(r, false, null));
         return r;
     });
 

@@ -3,7 +3,7 @@
 JavaScript parser for reference net datatypes.
 
 Supported datatypes:
-  * *.rnw *.draw .*fa
+  * *.rnw *.draw *.fa
   * *.pnml
 
 ## Installation
