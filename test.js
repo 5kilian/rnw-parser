@@ -3,7 +3,7 @@ import util from 'util';
 import RnwParser from './index';
 
 test('testRnw', async t => {
-    let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/untitled.rnw')).then(r => {
+    let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/doubleTip.rnw')).then(r => {
         console.log(util.inspect(r, false, null));
         return r;
     });
@@ -12,10 +12,10 @@ test('testRnw', async t => {
 });
 
 test('testPnml', async t => {
-    let res = Promise.resolve(RnwParser.readPnml('./resources/test-files/untitled.pnml')).then(r => {
+    let res = Promise.resolve(RnwParser.readPnml('./resources/test-files/doubleTip.pnml')).then(r => {
         console.log(util.inspect(r, false, null));
         return r;
     });
 
-    t.is((await res).size, 15);
+    t.is((await res).size, 6);
 });
