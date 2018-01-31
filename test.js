@@ -17,5 +17,5 @@ test('testPnml', async t => {
         return r;
     });
 
-    t.is((await res).size, 6);
+    t.is((await res).size, 7);
 });

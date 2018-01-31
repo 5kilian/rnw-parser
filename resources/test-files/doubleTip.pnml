@@ -1,0 +1,56 @@
+<pnml xmlns="RefNet">
+   <net id="netId1517360605916" type="RefNet">
+      <place id="1">
+         <initialMarking>
+            <graphics>
+               <offset x="4" y="26"/>
+            </graphics>
+            <text>inscription</text>
+         </initialMarking>
+         <name>
+            <graphics>
+               <offset x="-43" y="-8"/>
+            </graphics>
+            <text>stelle</text>
+         </name>
+         <graphics>
+            <position x="189" y="412"/>
+            <dimension x="20" y="20"/>
+            <fill color="rgb(112,219,147)"/>
+            <line color="rgb(0,0,0)"/>
+         </graphics>
+      </place>
+      <transition id="2">
+         <name>
+            <graphics>
+               <offset x="9" y="23"/>
+            </graphics>
+            <text>name</text>
+         </name>
+         <graphics>
+            <position x="311" y="415"/>
+            <dimension x="24" y="16"/>
+            <fill color="rgb(112,219,147)"/>
+            <line color="rgb(0,0,0)"/>
+         </graphics>
+      </transition>
+      <arc id="3" source="1" target="2">
+         <inscription>
+            <graphics>
+               <offset x="0" y="0"/>
+            </graphics>
+            <text>x</text>
+         </inscription>
+         <type>
+            <text>multi-ordinary</text>
+         </type>
+         <graphics>
+            <position x="249" y="413"/>
+            <line color="rgb(0,0,0)" style="solid"/>
+         </graphics>
+      </arc>
+      <name>
+         <text>doubleTip</text>
+      </name>
+   </net>
+</pnml>
