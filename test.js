@@ -28,3 +28,12 @@ test('testDraw', async t => {
 
     t.is((await res).size, (await res).figures.length);
 });
+
+test('testFa', async t => {
+    let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/test.fa')).then(r => {
+        // console.log(util.inspect(r, false, null));
+        return r;
+    });
+
+    t.is((await res).size, (await res).figures.length);
+});
