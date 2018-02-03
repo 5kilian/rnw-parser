@@ -2,47 +2,39 @@ import test from 'ava';
 import util from 'util';
 import RnwParser from './index';
 
-test('testRnw', async t => {
-    let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/doubleTip.rnw')).then(r => {
-        // console.log(util.inspect(r, false, null));
-        return r;
-    });
+// console.log(util.inspect(result, false, null));
 
-    t.is((await res).size, (await res).figures.length);
+let testDir = './resources/test-files/';
+let tests = [
+    { file: 'SenderEmpfaengerSimple', method: testSenderEmpfaengerSimple },
+    { file: 'Kinkk', method: testKink },
+];
+
+test('testRnw', async t => {
+    let parse = file => RnwParser.readRnw(testDir + file);
+    for (let i=0; i<tests.length; i++) {
+        tests[i].method(t, await Promise.resolve(parse(tests[i].file + '.rnw')));
+    }
 });
 
 test('testPnml', async t => {
-    let res = Promise.resolve(RnwParser.readPnml('./resources/test-files/doubleTip.pnml')).then(r => {
-        // console.log(util.inspect(r, false, null));
-        return r;
-    });
-
-    t.is((await res).size, 7);
+    let parse = file => RnwParser.readPnml(testDir + file);
+    for (let i=0; i<tests.length; i++) {
+        tests[i].method(t, await Promise.resolve(parse(tests[i].file + '.pnml')));
+    }
 });
 
-test('testDraw', async t => {
-    let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/test.draw')).then(r => {
-        // console.log(util.inspect(r, false, null));
-        return r;
-    });
+function testSenderEmpfaengerSimple(t, result) {
+    t.is(result.size, 25);
+    t.is(result.figures.filter(figure => figure.type === 'Place').length, 6);
+    t.is(result.figures.filter(figure => figure.type === 'Transition').length, 4);
+    t.is(result.figures.filter(figure => figure.type === 'Arc').length, 12);
+    t.is(result.figures.filter(figure => figure.type === 'Text').length, 3);
+}
 
-    t.is((await res).size, (await res).figures.length);
-});
+function testKink(t, result) {
+    console.log(util.inspect(result, false, null));
 
-test('testFa', async t => {
-    let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/test.fa')).then(r => {
-        // console.log(util.inspect(r, false, null));
-        return r;
-    });
 
-    t.is((await res).size, (await res).figures.length);
-});
 
-test('testAip', async t => {
-    let res = Promise.resolve(RnwParser.readRnw('./resources/test-files/untitled.aip')).then(r => {
- //       console.log(util.inspect(r, false, null));
-        return r;
-    });
-
-    t.is((await res).size, (await res).figures.length);
-});
+}
