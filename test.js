@@ -7,7 +7,7 @@ import RnwParser from './index';
 let testDir = './resources/test-files/';
 let tests = [
     { file: 'SenderEmpfaengerSimple', method: testSenderEmpfaengerSimple },
-    { file: 'Kinkk', method: testKink },
+    { file: 'Kink', method: testKink },
 ];
 
 test('testRnw', async t => {
@@ -33,8 +33,7 @@ function testSenderEmpfaengerSimple(t, result) {
 }
 
 function testKink(t, result) {
-    console.log(util.inspect(result, false, null));
-
-
-
+    t.is(result.figures.filter(figure => figure.id === 5)[0].positions.length, 2);
+    t.is(result.figures.filter(figure => figure.id === 2)[0].positions.length, 3);
+    t.is(result.figures.filter(figure => figure.id === 4)[0].positions.length, 4);
 }
